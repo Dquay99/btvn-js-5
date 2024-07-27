@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <video autoplay loop muted class="trailer">
+            <source type="video/mp4" src="video/videotrailer.mp4">
+        </video>
+
+        <div class="subcriber">
+            <button class="h1" type="button" onclick="openLogin()">Đăng Nhập</button>
+        </div>
+        <div id="modal">
+            <div id="login">
+                <button class="but1" onclick="hideLogin()">X</button>
+                <h1>Đăng Nhập</h1>
+                <div class="gptext">
+                    <p>Gmail :<input type="text" id="ip1"></p>
+                    <p id="danger" style="display: none; color: red;"></p>
+                    <p>Password :<input type="password" id="pass1"></p>
+                    <p id="danger2" style="display: none; color: red;"></p>
+                    <button class="but2" type="button" onclick="submit()">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function openLogin() {
+            var open = document.getElementById("modal");
+            open.style.display = "flex";
+        }
+        function hideLogin() {
+            var hide = document.getElementById("modal");
+            hide.style.display = "none";
+        }
+
+        function submit() {
+            var ip = document.getElementById("ip1");
+            var value = ip.value;
+            var pass = document.getElementById("pass1")
+            var value2 = pass.value;
+            gmail(value);
+            checkPass(value2);
+        }
+
+
+        function gmail(email) {
+            var danger = document.getElementById("danger");
+            if (validateEmail(email)) {
+                danger.style = "display:block";
+                danger.style = "color:green";
+                danger.innerText = "Đã đúng định dạng ";
+            } else {
+                danger.style.display = "block";
+                danger.innerText = "Đây không phải định dạng của gmail";
+                danger.style.color = "red";
+            }
+        }
+
+        function validateEmail(email) {
+            const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+            return pattern.test(email);
+        }
+
+        const email1 = 'example@gmail.com';
+        const email2 = 'invalid-email';
+
+        console.log(validateEmail(email1));
+        console.log(validateEmail(email2));
+
+        function checkPass(e) {
+            var danger2 = document.getElementById("danger2")
+            if (e.length < 6 || e.length >= 10) {
+                danger2.style.display = "block";
+                danger2.innerText = "Password phải chứa ít nhất 6 ký tự và tối đa 10 ký tự ";
+                danger2.style.color = "red";
+            } else {
+                danger2.style.display = "block";
+                danger2.style.color = "green";
+                danger2.innerText = "Đã đúng định dạng";
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

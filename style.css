@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    position: relative;
+}
+
+.trailer {
+    display: flex;
+    width: 100%;
+}
+
+
+.subcriber {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    margin: 0 auto;
+}
+
+
+.subcriber .h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    width: 250px;
+    height: 80px;
+    background-color: transparent;
+    color: #F89E1C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #F89E1C;
+}
+
+.subcriber .h1:hover {
+    background-color: #F89E1C;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+
+#modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+    background-color: #777;
+    font-size: 40px;
+    gap: 20px;
+}
+
+#login .but1 {
+    font-size: 25px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login .gptext {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+
+}
+
+#login input {
+    width: 200px;
+    height: 30px;
+}
+
+.but2 {
+    font-size: 25px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login #danger {
+    font-size: 25px;
+}
+
+#login #danger2 {
+    font-size: 25px;
+}
+
